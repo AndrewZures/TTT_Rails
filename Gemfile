@@ -8,11 +8,13 @@ gem 'tttazures'
 
 gem 'jquery-rails'
 
-group :development, :test do 
+group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
 
 
 # To use ActiveModel has_secure_password
