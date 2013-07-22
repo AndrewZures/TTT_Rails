@@ -1,4 +1,4 @@
-<h2> HELLO </h2>
+<%= @move %>
 
 <% count = 0 %>
 <table board="1">
@@ -16,5 +16,9 @@
     <% end %>
 </table>
 
+<% if @board.check_board_status != :continue_game %>
+           <%= @board.check_board_status%> " Wins!!!" 
+<% end %>
+
 <br>
-<%= link_to "New Game", new_game_path %>
+<%= link_to "New Game", new_game_url %>
