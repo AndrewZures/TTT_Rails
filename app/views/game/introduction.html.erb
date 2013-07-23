@@ -1,0 +1,31 @@
+<h1>Welcome to Tic Tac Toe</h1>
+
+
+
+<%= form_tag("game", method: :post) do %>
+    Choose player 1<br>
+    <%= radio_button_tag 'player1', :human %>
+        <%= label :player1,'Human' %><br />
+    <%= radio_button_tag 'player1', :easy_ai %>
+        <%= label :player1, "Easy AI"%><br />
+    <%= radio_button_tag 'player1', :medium_ai %>
+        <%= label :player1, 'Medium AI'%><br />
+    <%= radio_button_tag 'player1', :unbeatable_ai %>
+        <%= label :player1, 'Unbeatable AI'%><br />
+
+    <br>Choose player 2<br>
+   <%= radio_button_tag 'player2', :human %>
+        <%= label :player2,'Human' %><br />
+    <%= radio_button_tag 'player2', :easy_ai %><%= label :player2, "Easy AI"%><br />
+    <%= radio_button_tag 'player2', :medium_ai %><%= label :player2, "Medium AI"%><br />
+    <%= radio_button_tag 'player2', :unbeatable_ai %><%= label :player2, "Unbeatable AI"%><br />
+
+    <br>Choose game type<br>
+    <%= radio_button_tag 'game_type', :three_by_three %><%= label :game_type,'3x3 Board' %><br />
+    <%= radio_button_tag 'game_type', :four_by_four %><%= label :game_type, "4x4 Board"%><br />
+    <%= radio_button_tag 'game_type', :five_by_five %><%= label :game_type, "5x5 Board"%><br />
+    <%= radio_button_tag 'game_type', :cube_three %><%= label :game_type, "3x3x3 Board"%><br />
+
+    <br>
+    <%= submit_tag("Submit") %>
+<% end %>
