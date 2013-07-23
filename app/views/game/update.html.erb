@@ -1,8 +1,3 @@
-<%= @move %>
-<%= @player_turn %><br>
-<%= session[:player1] %><%= session[:player1].get_player_type%>
-<%= session[:player2] %><%= session[:player2].get_player_type%><br>
-<%= @current_player %>
 <%   results = @board.get_print_results;
     @board_array = results[0];
     @row_length = results[1] %>
@@ -26,10 +21,13 @@
     <% end %>
 </table>
 
-<% if @board.check_board_status != :continue_game %>
-    <%= @board.check_board_status%> " Wins!!!" <br>
-           <%= link_to "restart this game", restart_game_url %><br>
-           <%= link_to "create new game!", introduction_url %>
+<% if @board.game_over? %>
+    <h2><% if @winner == :tie %> Tie!!!
+        <% else %>
+            <%= @winner %> Wins!!! <br><h2>
+        <% end %>
+        <h3> <%= link_to "restart this game", restart_game_url %><br>
+            <%= link_to "create new game!", introduction_url %><h3>
 <% end %>
 
 

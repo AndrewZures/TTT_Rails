@@ -30,9 +30,9 @@ class GameController < ApplicationController
         @current_player = session[@player_turn]
         
         while(!@board.game_over?)
-            if @current_player.get_player_type == :human && @move == nil
+            if @current_player.type == :human && @move == nil
                 break
-            elsif @current_player.get_player_type == :human
+            elsif @current_player.type == :human
                 @board.record_choice(@move.to_i, @current_player.symbol)
                 @move = nil
             else
@@ -44,8 +44,24 @@ class GameController < ApplicationController
             session[:player_turn] = @player_turn
             @current_player = session[@player_turn]
         end
+
+        if @board.game_over?
+            @winner = self.get_winner(@board)
+        end
         
         render action: :update
+    end
+
+
+    def get_winner board
+       winner_symbol = board.check_board_status
+       if session[:player1].symbol == winner_symbol
+            :player1 
+       elsif session[:player2].symbol == winner_symbol
+           :player2
+       elsif winner_symbol == :tie
+           :tie
+       end 
     end
 
     
