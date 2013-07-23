@@ -1,5 +1,12 @@
 <%= @move %>
-<%= session[:current_player] %>
+<%= @player_turn %><br>
+<%= session[:player1] %><%= session[:player1].get_player_type%>
+<%= session[:player2] %><%= session[:player2].get_player_type%><br>
+<%= @current_player %>
+<%   results = @board.get_print_results;
+    @board_array = results[0];
+    @row_length = results[1] %>
+
 
 <% count = 0 %>
 <table board="1">
@@ -7,9 +14,11 @@
     <% @board_array.each_with_index do |el, i| %>
         <% count += 1 %>
         <td> <% if el == :open %>
-            <%= button_to el, update_game_url(:move => i, :board => @board), method: :post %>
-        <% else %>
-            <%= el %>
+            <%= link_to (image_tag "blank_icon.png"), update_game_url(:move => i, :board => @board), method: :post %>
+        <% elsif el == :x %>
+            <%= image_tag "x_icon.png" %>
+        <% elsif el == :o %>
+            <%= image_tag "o_icon.png" %>
         <% end %></td>
         <% if count % @row_length == 0 %>
             </tr><tr>
@@ -18,7 +27,9 @@
 </table>
 
 <% if @board.check_board_status != :continue_game %>
-           <%= @board.check_board_status%> " Wins!!!" 
+    <%= @board.check_board_status%> " Wins!!!" <br>
+           <%= link_to "restart this game", restart_game_url %><br>
+           <%= link_to "create new game!", introduction_url %>
 <% end %>
 
-<br>
+

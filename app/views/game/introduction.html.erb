@@ -2,7 +2,7 @@
 
 
 
-<%= form_tag("game", method: :post) do %>
+<%= form_tag(new_game_url, method: :post) do %>
     Choose player 1<br>
     <%= radio_button_tag 'player1', :human %>
         <%= label :player1,'Human' %><br />
