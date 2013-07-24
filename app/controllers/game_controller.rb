@@ -1,10 +1,7 @@
 require "factory"
+require_relative "./application_controller"
 
 class GameController < ApplicationController
-
-    def get_board
-        @board.get_print_results
-    end
 
     def new_game
         factory = Factory.new
@@ -19,6 +16,7 @@ class GameController < ApplicationController
     def restart_game
         @board = session[:game]
         @board.reset_board
+        session[:player_turn] = :player1
         
         self.update
     end
@@ -63,8 +61,6 @@ class GameController < ApplicationController
            :tie
        end 
     end
-
-    
 
     def opponent player
         if player == :player1 then :player2

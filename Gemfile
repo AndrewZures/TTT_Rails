@@ -4,7 +4,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.0' 
 
 gem 'rails_12factor', group: :production
-gem 'rspec'
+gem 'rspec-rails'
+gem 'simplecov', :require => false, :group => :test
 
 gem 'tttazures'
 

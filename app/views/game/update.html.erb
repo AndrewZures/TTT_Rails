@@ -18,6 +18,9 @@
         <% if count % @row_length == 0 %>
             </tr><tr>
         <% end %>
+        <% if count % (@row_length**2) == 0 %>
+            <br>
+        <% end %>
     <% end %>
 </table>
 
