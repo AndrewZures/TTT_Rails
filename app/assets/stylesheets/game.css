@@ -1,4 +1,40 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+body {
+  background-color : #84A2FF;
+}
+
+h1 {
+  color: #99853D;
+  text-align : center;
+}
+
+h2 {
+  font-weight: bold;
+  color: #cdff00;
+  text-align : center;
+}
+
+/*------ choice list -------*/
+
+.choice_list {
+  text-align : center;
+}
+
+.choice_list > input[type=radio]{
+  display : none;
+}
+
+input[type=radio] {
+  display : none;
+}
+
+input[type=radio] + img {
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+input[type=radio]:checked + img{
+  border:2px solid #f00;
+}
+
+
+

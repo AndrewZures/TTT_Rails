@@ -1,31 +1,35 @@
+<% stylesheet_link_tag "game" %>
+
 <h1>Welcome to Tic Tac Toe</h1>
 
-
-
 <%= form_tag(new_game_url, method: :post) do %>
-    Choose player 1<br>
-    <%= radio_button_tag 'player1', :human %>
-        <%= label :player1,'Human' %><br />
-    <%= radio_button_tag 'player1', :easy_ai %>
-        <%= label :player1, "Easy AI"%><br />
-    <%= radio_button_tag 'player1', :medium_ai %>
-        <%= label :player1, 'Medium AI'%><br />
-    <%= radio_button_tag 'player1', :unbeatable_ai %>
-        <%= label :player1, 'Unbeatable AI'%><br />
 
-    <br>Choose player 2<br>
+<h2>Choose Player 1</h2>
+<ul id=choice_list>
+  <li><input type="image" src="rails.png" name="player1" id="player_1"></li>
+  <li>"Hello"</li>
+  <li>"World"</li>
+</ul>
+
+<h2>Choose Player 1</h2>
+<%= radio_button_tag 'player1', :human%><%=image_tag("rails.png") %>
+    <%= radio_button_tag 'player1', :easy_ai %><%=image_tag("rails.png") %>
+    <%= radio_button_tag 'player1', :medium_ai %><%=image_tag("rails.png") %>
+    <%= radio_button_tag 'player1', :unbeatable_ai %><%=image_tag("rails.png") %>
+
+<h2>Choose Player 2</h2>
    <%= radio_button_tag 'player2', :human %>
         <%= label :player2,'Human' %><br />
     <%= radio_button_tag 'player2', :easy_ai %><%= label :player2, "Easy AI"%><br />
     <%= radio_button_tag 'player2', :medium_ai %><%= label :player2, "Medium AI"%><br />
     <%= radio_button_tag 'player2', :unbeatable_ai %><%= label :player2, "Unbeatable AI"%><br />
 
-    <br>Choose game type<br>
+<h2>Choose Game Type</h2>
     <%= radio_button_tag 'game_type', :three_by_three %><%= label :game_type,'3x3 Board' %><br />
     <%= radio_button_tag 'game_type', :four_by_four %><%= label :game_type, "4x4 Board"%><br />
     <%= radio_button_tag 'game_type', :five_by_five %><%= label :game_type, "5x5 Board"%><br />
     <%= radio_button_tag 'game_type', :cube_three %><%= label :game_type, "3x3x3 Board"%><br />
 
     <br>
-    <%= submit_tag("Submit") %>
+    <%= submit_tag("Begin Game") %>
 <% end %>

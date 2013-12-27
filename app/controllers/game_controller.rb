@@ -9,7 +9,6 @@ class GameController < ApplicationController
         session[:player1] = factory.get_player(params[:player1].to_sym, :o)
         session[:player2] = factory.get_player(params[:player2].to_sym, :x)
         session[:player_turn] = :player1
-
         self.update
     end
 
@@ -17,7 +16,6 @@ class GameController < ApplicationController
         @board = session[:game]
         @board.reset_board
         session[:player_turn] = :player1
-        
         self.update
     end
 
@@ -26,7 +24,7 @@ class GameController < ApplicationController
         @board = session[:game]
         @player_turn = session[:player_turn]
         @current_player = session[@player_turn]
-        
+
         while(!@board.game_over?)
             if @current_player.type == :human && @move == nil
                 break
@@ -38,7 +36,7 @@ class GameController < ApplicationController
                 @move = nil
             end
 
-            @player_turn = opponent(@player_turn) 
+            @player_turn = opponent(@player_turn)
             session[:player_turn] = @player_turn
             @current_player = session[@player_turn]
         end
@@ -46,20 +44,19 @@ class GameController < ApplicationController
         if @board.game_over?
             @winner = self.get_winner(@board)
         end
-        
+
         render action: :update
     end
-
 
     def get_winner board
        winner_symbol = board.check_board_status
        if session[:player1].symbol == winner_symbol
-            :player1 
+            :player1
        elsif session[:player2].symbol == winner_symbol
            :player2
        elsif winner_symbol == :tie
            :tie
-       end 
+       end
     end
 
     def opponent player

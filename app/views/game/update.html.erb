@@ -5,7 +5,7 @@
 
 <% count = 0 %>
 <table board="1">
-    <tr>    
+    <tr>
     <% @board_array.each_with_index do |el, i| %>
         <% count += 1 %>
         <td> <% if el == :open %>
@@ -25,12 +25,17 @@
 </table>
 
 <% if @board.game_over? %>
-    <h2><% if @winner == :tie %> Tie!!!
-        <% else %>
-            <%= @winner %> Wins!!! <br><h2>
-        <% end %>
-        <h3> <%= link_to "restart this game", restart_game_url %><br>
-            <%= link_to "create new game!", introduction_url %><h3>
+  <h2>
+    <% if @winner == :tie %> Tie!!!
+    <% else %>
+      <%= @winner %> Wins!!!
+    <% end %>
+  <h2>
+    <h3>
+      <%= link_to "restart this game", restart_game_url %>
+    <br>
+      <%= link_to "create new game!", introduction_url %>
+    <h3>
 <% end %>
 
 
