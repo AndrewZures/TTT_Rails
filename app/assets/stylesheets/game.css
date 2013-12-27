@@ -1,15 +1,45 @@
+/*
+B2A07E - dark tan
+FFF7E7 - light tan
+FFEECD - medium tan
+6F8DB2 - medium navy
+CDE3FF - light blue
+*/
+
+
 body {
-  background-color : #84A2FF;
+  background-color : #6F8DB2;
 }
 
 h1 {
-  color: #99853D;
+  color: #CDE3FF;
   text-align : center;
+  font-family: 'Oswald';
 }
 
 h2 {
   font-weight: bold;
-  color: #cdff00;
+  color: #CDE3FF;
+  text-align : center;
+}
+
+h3 {
+  color: #CDE3FF;
+  text-align : center;
+}
+
+h4 {
+  color: #CDE3FF;
+  text-align : center;
+}
+
+h5 {
+  color: #CDE3FF;
+  text-align : center;
+}
+
+h6 {
+  color: #CDE3FF;
   text-align : center;
 }
 
@@ -19,22 +49,47 @@ h2 {
   text-align : center;
 }
 
-.choice_list > input[type=radio]{
+.choice_list input[type=radio] {
   display : none;
 }
 
-input[type=radio] {
-  display : none;
+.choice_list input[type=radio] + img {
+  opacity: 0.4;
+  height: 100px;
+  width: auto;
 }
 
-input[type=radio] + img {
-  cursor:pointer;
-  border:2px solid transparent;
+.choice_list input[type=radio]:checked + img{
+  opacity: 1.0;
 }
 
-input[type=radio]:checked + img{
-  border:2px solid #f00;
+.choice_list input[type=radio]:hover + img{
+  opacity: 1.0;
 }
 
+.choice_list img:hover {
+  opacity: 1.0;
+}
+
+input[type=submit] {
+  background: #CDE3FF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  color: #6F8DB2;
+  font-family: 'Oswald';
+  font-size: 24px;
+  text-decoration: none;
+  cursor: poiner;
+  border:none;
+  width: 8em;
+  height 8em;
+}
+
+#submit:hover {
+  border: none;
+  background:#FFF7E7;
+  box-shadow: 0px 0px 1px #777;
+}
 
 

@@ -1,68 +1,75 @@
 <link href="assets/game.css" rel="stylesheet" type="text/css">
-<h1>Hello This is Pure HTML Version</h1>
+<h1>Welcome To Tic Tac Toe</h1>
 
 <div id="new_game_form" class="choice_list">
+
   <form action="new_game" method="post">
+
+    <h2>Choose Player 1</h2>
     <div id="player1_options">
       <label for="player1_human">
-        <input type="radio" name="player1" id="player1_human"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player1" id="player1_human" value="human"/>
+        <img src="assets/rails.png" alt="Human" />
       </label>
       <label for="player1_easy_ai">
-        <input type="radio" name="player1" id="player1_easy_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player1" id="player1_easy_ai" value="easy_ai"/>
+        <img src="assets/rails.png" alt="Easy AI" />
       </label>
       <label for="player1_medium_ai">
-        <input type="radio" name="player1" id="player1_medium_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player1" id="player1_medium_ai" value="medium_ai"/>
+        <img src="assets/rails.png" alt="Medium AI" />
       </label>
       <label for="player1_unbeatable_ai">
-        <input type="radio" name="player1" id="player1_unbeatable_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player1" id="player1_unbeatable_ai" value="unbeatable_ai" />
+        <img src="assets/rails.png" alt="Unbeatable AI"/>
       </label>
     </div>
 
+    <h2>Choose Player 2</h2>
     <div id="player2_options">
       <label for="player2_human">
-        <input type="radio" name="player2" id="player2_human"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player2" id="player2_human" value="human"/>
+        <img src="assets/rails.png" alt="Human" />
       </label>
       <label for="player2_easy_ai">
-        <input type="radio" name="player2" id="player2_easy_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player2" id="player2_easy_ai" value="easy_ai"/>
+        <img src="assets/rails.png" alt="Easy AI" />
       </label>
       <label for="player2_medium_ai">
-        <input type="radio" name="player2" id="player2_medium_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player2" id="player2_medium_ai" value="medium_ai"/>
+        <img src="assets/rails.png" alt="Medium AI" />
       </label>
       <label for="player2_unbeatable_ai">
-        <input type="radio" name="player2" id="player2_unbeatable_ai"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="player2" id="player2_unbeatable_ai" value="unbeatable_ai"/>
+        <img src="assets/rails.png" alt="Unbeatable AI" />
       </label>
     </div>
 
+    <h2>Choose Game Type</h2>
     <div id="game_options">
       <label for="3x3_game">
-        <input type="radio" name="game_type" id="3x3_game"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="game_type" id="3x3_game" value="three_by_three"/>
+        <img src="assets/rails.png" alt="3x3 Board" />
       </label>
       <label for="4x4_game">
-        <input type="radio" name="game_type" id="4x4_game"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="game_type" id="4x4_game" value="four_by_four"/>
+        <img src="assets/rails.png" alt="4x4 Board"/>
       </label>
       <label for="5x5_game">
-        <input type="radio" name="game_type" id="5x5_game"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="game_type" id="5x5_game" value="five_by_five"/>
+        <img src="assets/rails.png" alt="5x5 Board"/>
       </label>
       <label for="cube3_game">
-        <input type="radio" name="game_type" id="cube3_game"/>
-        <img src="assets/rails.png" alt="Smiley face" height="42" width="42">
+        <input type="radio" name="game_type" id="cube3_game" value= "cube_three"/>
+        <img src="assets/rails.png" alt="3x3x3 Board"/>
       </label>
     </div>
+    <br>
 
-    <input type="submit" value="Go To Game"/>
-  </div>
-</form>
+    <input type="submit" id="submit" value="Go To Game"/>
+
+  </form>
+</div>
 
 
 
